@@ -1,0 +1,505 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Laila&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
+/* scroll */
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+.btn {
+    width: 100px;
+}
+
+tr {
+    height: 10px;
+}
+
+.confirmationModal {
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.graphModal {
+    background: #fff;
+    border-radius: 20px;
+}
+
+.close-modal {
+    top: 0;
+    right: 0;
+    margin: 5px;
+    position: fixed;
+    z-index: 2000;
+}
+
+@media (max-width: 1200px) {
+    .close {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+.fa-sign-out-alt{
+    cursor: pointer;
+}
+.transactions {
+    height: 45vh;
+}
+
+.btn-danger{
+    border: 0;
+    background: #EF3100;
+}
+
+.btn-danger:hover{
+    background: tomato;
+}
+
+.loginImage{
+    height: 60vh;
+    width: 40vw;
+}
+
+@media (max-width:1200px) {
+    .loginImage{
+        height: 40vh;
+        width: 85%;
+    }
+}
+
+
+#logo{
+    position:absolute;
+    font-size: 2rem;
+    margin:10px;
+    top:0;
+    left:0;
+    font-family: Montserrat,sans-serif;
+}
+
+.insta{
+    color:tomato
+}
+
+.cash{
+    color:#EF3100
+}
+
+.transaction:hover{
+    background: #f0f0f0;
+}
+
+
+.graph{
+    margin-top:1rem;
+}
+
+@media (min-width:1200px) {
+    .transactions{
+        height: 90vh;
+    }
+
+    .subButtons{
+        display:none;
+    }
+
+    
+}
+
+@media (max-width:1200px) {
+    .graph{
+        display:none;
+    }
+    .gambleButton{
+        display:none;
+    }
+}
+
+.z-top {
+    z-index: 9999;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.accountsTable{
+    display: block;
+    height: 65vh;
+    overflow: auto;
+}
+
+thead,tbody tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.deleteCol{
+    width: 40px;
+}
+/* Menu */
+
+.wrapper {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: -100%;
+    /* right: -100%; */
+    height: 100%;
+    width: 100%;
+    /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: all 0.6s ease-in-out;
+}
+
+#active:checked~.wrapper {
+    left: 0;
+    /* right: 0; */
+}
+
+.menu-btn {
+    position: fixed;
+    z-index: 6;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 2px solid tomato;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.menu-btn:before {
+    transform: translateY(-8px);
+}
+
+.menu-btn:after {
+    transform: translateY(8px);
+}
+
+.close {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: background 0.6s;
+}
+
+.btn-square-md {
+    border: 0;
+    margin: 0.5rem;
+    width: 150px !important;
+    border-radius: 15px;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 150px !important;
+    text-align: center;
+    padding: 0px;
+    font-size: 12px;
+}
+
+
+/* closing animation */
+
+#active:checked+.menu-btn span {
+    transform: scaleX(0);
+}
+
+#active:checked+.menu-btn:before {
+    transform: rotate(45deg);
+    border-color: tomato;
+}
+
+#active:checked+.menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: tomato;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    width: 100%;
+    color: #202020;
+}
+
+
+/* Card */
+
+.card_ {
+    color:white;
+    width: 320px;
+    height: 190px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+}
+
+.card__part {
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-image: url("https://papers.co/wallpaper/papers.co-vy78-circle-red-simple-minimal-pattern-background-35-3840x2160-4k-wallpaper.jpg"), linear-gradient( to right bottom, #fd696b, #fa616e, #f65871, #f15075, #ec4879);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__front {
+    padding: 18px;
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+}
+
+.card_number {
+    display: block;
+    width: 100%;
+    word-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card__space-75 {
+    width: 65%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 35%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.modal {
+    background-color: #38393a;
+    /* font-weight: 600; */
+}
+
+.modal-body {
+    font-size: 1.3rem;
+    font-family: "Roboto", sans-serif;
+    /* font-weight: 400; */
+}
+
+.modal-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+
+/* 404 not found */
+.lbl-1 {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.lbl-2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+#notfound {
+    position: relative;
+    height: 100vh
+}
+
+#notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.notfound {
+    max-width: 520px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center
+}
+
+
+.bank-name {
+  font-size: 4rem;
+  font-family: "Laila", sans-serif;
+}
+
+.spade-logo {
+  font-size: 5rem;
+}
+
+#gambleLabel {
+  font-family: "Laila", sans-serif;
+}
+
+.notfound .notfound-404 {
+    position: relative;
+    height: 240px
+}
+
+.notfound .notfound-404 h1 {
+    font-family: montserrat, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 252px;
+    font-weight: 1000;
+    margin: 0;
+    color: #262626;
+    text-transform: uppercase;
+    letter-spacing: -40px;
+    margin-left: -20px
+}
+
+.notfound .notfound-404 h1>span {
+    text-shadow: -8px 0 0 #fff
+}
+
+.notfound .notfound-404 h3 {
+    font-family: cabin, sans-serif;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #262626;
+    margin: 0;
+    letter-spacing: 3px;
+    padding-left: 6px
+}
+
+.notfound h2 {
+    font-family: cabin, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 25px
+}
+
+@media only screen and (max-width:767px) {
+    .notfound .notfound-404 {
+        height: 200px
+    }
+    .notfound .notfound-404 h1 {
+        font-size: 200px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .notfound .notfound-404 {
+        height: 162px
+    }
+    .notfound .notfound-404 h1 {
+        font-size: 162px;
+        height: 150px;
+        line-height: 162px
+    }
+    .notfound h2 {
+        font-size: 16px
+    }
+}
+
